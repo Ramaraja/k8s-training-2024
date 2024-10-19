@@ -1,0 +1,46 @@
+Common commands:
+----------------
+kubectl get nodes
+
+kubectl get pods -> to list down the pods
+
+kubectl create -f <yml> -> to create pod
+
+kubectl logs <podname/pod id> -> to view the logs
+
+kubectl describe pod <podname/id> -> to view the configuration
+
+Kubectl edit pod <podname/id> -> to edit pod definition 
+
+
+Services:
+----------
+
+kubectl get services
+
+kubectl describe services
+
+ReplicaSet:
+-----------
+
+kubectl get replicaset 
+
+kubectl delete replicaset <replicaset name>
+
+kubectl edit replicaset <replicaset name> 
+
+Deployment - update commands
+----------------------------
+
+kubectl set image <deployment name> <value>
+
+kubectl rollout status <deployment name>
+
+kubectl rollout history <deployment name>
+
+kubectl rollout undo <deployment name> --> rollback
+
+kubectl scale <deployment name> --replicas=5
+
+kubectl autoscale <deployment name> --min=10 --max=15 --cpu-percent=80 >> works only when HPA enabled
+
