@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: minimal-ingress
+
+spec:
+  ingressClassName: nginx-example
+  rules:
+  - http:
+      paths:
+      - path: /webapp
+        pathType: Prefix
+        backend:
+          service:
+            name: webapp-service
+            port:
+              number: 8000
+      - path: /nginx
+        pathType: Prefix
+        backend:
+          service:
+            name: nginx-service-nodeport
+            port:
+              number: 80
